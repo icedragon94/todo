@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/classes.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/todos.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 0;
+            width: 400px;
+            background-color: #FFF59D;
+            color: #263238;
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+<body class="ff-sans_serif_el">
+<div>
+    <table class="tab-table">
+        <thead>
+            <tr class="tab-table-tr">
+                <th class="tab-table-th ta-center" id="active">Active</th>
+                <th class="tab-table-th ta-center" id="done">Done</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <tr id="add-row">
+                <td colspan="2">
+                    <span class="btn-add-todo ta-center" id="add-todo">Add todo</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/todoService.js"></script>
+<script src="js/todoEvents.js"></script>
+
+</body>
+</html>

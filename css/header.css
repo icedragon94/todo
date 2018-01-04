@@ -1,0 +1,17 @@
+.tab-table {
+    width: 100%;
+}
+
+.tab-table-th {
+    padding: 5px 0;
+    background-color: #d5cc84;
+    width: 48%;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.tab-table-th:hover {
+    background-color: #FDD835;
+}
