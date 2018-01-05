@@ -71,12 +71,10 @@ function changeTab() {
     let todoElement = $('#table-body');
 
     active.click(function () {
-        console.log('test active');
-        todos = filterIsFinished(todos);
+        todos = initTodos(todos);
     });
 
     done.click(function () {
-        console.log('test done');
         todos = filterIsFinished(todos, true);
     })
 }
