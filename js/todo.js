@@ -43,40 +43,34 @@ function initTodos() {
     }
 
     let todos = JSON.parse(todoString);
+    for (let i = 0; i < todos.length; i++) {
+        todos[i] = new ToDo(i, todos[i].title, todos[i].isFinished);
+    }
 
-    return filterIsFinished(todos);
+    return todos;
 }
 
-function filterIsFinished (todos, isFinished = false) {
+function filterTodos (todos, isFinished = false) {
     $('#table-body').empty();
     let arrayTodos = [];
 
     for (let i = 0; i < todos.length; i++) {
-        let todo = new ToDo(i, todos[i].title, todos[i].isFinished);
-        if (todo.isFinished === isFinished) {
-            arrayTodos.push(todo);
-            todo.insertToHTML();
+        if (todos[i].isFinished === isFinished) {
+            arrayTodos.push(todos[i]);
+            todos[i].insertToHTML();
         }
     }
 
     return arrayTodos;
 }
 
-let todos = initTodos();
-
-
-function changeTab() {
-    let active  = $('#active');
-    let done    = $('#done');
-    let todoElement = $('#table-body');
-
-    active.click(function () {
-        todos = initTodos(todos);
-    });
-
-    done.click(function () {
-        todos = filterIsFinished(todos, true);
-    })
+function getActiveTodos(todos) {
+    return filterTodos(todos, false);
 }
 
-changeTab();
+function getDoneTodos(todos) {
+    return filterTodos(todos, true);
+}
+
+let todos = initTodos();
+getActiveTodos(todos);
