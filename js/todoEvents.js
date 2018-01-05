@@ -1,4 +1,7 @@
-let addElement = $('#add-todo');
+const addElement =    $('#add-todo');
+const bodyElement =   $('body');
+const activeElement = $('#active');
+const doneElement =   $('#done');
 
 addElement.click(
     () => {
@@ -30,15 +33,31 @@ addElement.blur(() => {
     addElement.addClass('ta-center');
 });
 
-$('body').on('click', '.table-td', function (e) {
+// bodyElement.on('dblclick', '.table-td', function () {
+//
+// });
+
+bodyElement.on('click', '.table-td', function (e) {
     let element = e.target.parentNode.parentNode;
+
+    e.stopPropagation();
+    e.preventDefault();
+
     let id = element.id;
     const index = getTodoIndex(id);
     if (index === -1) {
         return ;
     }
-
-    todos.splice(index, 1);
+    console.log(index);
+    todos[index].isFinished = !todos[index].isFinished;
     $('#' + id).fadeOut(200);
     setLocalTodos(todos);
+});
+
+activeElement.click(function () {
+    getActiveTodos(todos);
+});
+
+doneElement.click(function () {
+    getDoneTodos(todos, true);
 });
