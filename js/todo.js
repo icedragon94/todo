@@ -4,7 +4,7 @@ function ToDo(id, title, isFinished) {
     this.isFinished = isFinished;
 
     this.insertToHTML = () => {
-        let addRowElement   = $('#add-row');
+        let tableBodyElement= $('#table-body');
         let tableRowElement = document.createElement('tr');
         tableRowElement.innerHTML = `
                     <td colspan="2" class="table-td ta-left" id="${this.id}">
@@ -15,7 +15,7 @@ function ToDo(id, title, isFinished) {
                         </label>
                     </td>`;
 
-        addRowElement.before(tableRowElement);
+        tableBodyElement.append(tableRowElement);
     };
 
     this.generateId = (todos) => {
