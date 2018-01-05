@@ -48,7 +48,7 @@ function initTodos() {
 }
 
 function filterIsFinished (todos, isFinished = false) {
-    $('.table-td').remove();
+    $('#table-body').empty();
     let arrayTodos = [];
 
     for (let i = 0; i < todos.length; i++) {
