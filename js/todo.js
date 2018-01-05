@@ -13,6 +13,7 @@ function ToDo(id, title, isFinished) {
                             <input class="checkbox-input" type="checkbox">
                             <span class="checkbox-mark"></span>
                         </label>
+                        <span class="todo-title"> ${this.title}</span>
                     </td>`;
 
         tableBodyElement.append(tableRowElement);

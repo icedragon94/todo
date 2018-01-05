@@ -37,7 +37,7 @@ addElement.blur(() => {
 //
 // });
 
-bodyElement.on('click', '.table-td', function (e) {
+bodyElement.on('click', '.checkbox-container', function (e) {
     let element = e.target.parentNode.parentNode;
 
     e.stopPropagation();
