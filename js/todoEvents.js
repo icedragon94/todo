@@ -48,7 +48,7 @@ bodyElement.on('click', '.table-td', function (e) {
     if (index === -1) {
         return ;
     }
-    console.log(index);
+
     todos[index].isFinished = !todos[index].isFinished;
     $('#' + id).fadeOut(200);
     setLocalTodos(todos);
