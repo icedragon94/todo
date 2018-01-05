@@ -5,12 +5,16 @@ function ToDo(id, title, isFinished) {
 
     this.insertToHTML = () => {
         let tableBodyElement= $('#table-body');
+        let checkAttr = '';
+        if (this.isFinished) {
+            checkAttr = 'checked="true"';
+        }
+
         let tableRowElement = document.createElement('tr');
         tableRowElement.innerHTML = `
                     <td colspan="2" class="table-td ta-left" id="${this.id}">
                         <label class="checkbox-container">
-                            <span class="todo-title"> ${this.title}</span>
-                            <input class="checkbox-input" type="checkbox">
+                            <input class="checkbox-input" type="checkbox" ${checkAttr}>
                             <span class="checkbox-mark"></span>
                         </label>
                         <span class="todo-title"> ${this.title}</span>
