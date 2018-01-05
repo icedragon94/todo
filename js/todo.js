@@ -17,7 +17,8 @@ function ToDo(id, title, isFinished) {
                             <input class="checkbox-input" type="checkbox" ${checkAttr}>
                             <span class="checkbox-mark"></span>
                         </label>
-                        <span class="todo-title"> ${this.title}</span>
+                        <span class="todo-title no-select"> ${this.title}</span>
+                        <span class="todo-delete">&#10006;</span>
                     </td>`;
 
         tableBodyElement.append(tableRowElement);
