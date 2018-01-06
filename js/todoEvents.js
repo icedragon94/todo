@@ -56,7 +56,7 @@ bodyElement.on('keypress', (event) => {
     const index = getTodoIndex(id);
     const isFinished = todos[index].isFinished;
 
-    todos[index] = new ToDo(0, title, isFinished);
+    todos[index] = new ToDo(id, title, isFinished);
     setLocalTodos(todos);
     target.blur();
 });
