@@ -46,7 +46,7 @@ bodyElement.on('focusout', (event) => {
     target.selectionStart = 2;
 });
 
-todoTableElement.keypress((event) => {
+bodyElement.on('keypress', (event) => {
     if (event.which !== 13) {
         return;
     }
